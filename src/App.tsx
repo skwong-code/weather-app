@@ -9,8 +9,10 @@ function App() {
   const [error, setError] = useState('');
   const [suggestions, setSuggestions] = useState<any[]>([]);
 
-  const OPENWEATHER_API_KEY = 'REDACTED';
-  const MAPBOX_API_KEY = 'REDACTED';   // ← Paste your Mapbox key here
+  const OPENWEATHER_API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
+  const MAPBOX_API_KEY = import.meta.env.VITE_MAPBOX_API_KEY;
+
+  // ... (the rest of the code stays exactly the same as the last version I gave you)
 
   const searchCities = async (query: string) => {
     if (!query.trim()) return;
